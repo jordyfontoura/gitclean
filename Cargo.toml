@@ -1,0 +1,32 @@
+[package]
+name = "gitclean"
+version = "1.0.0"
+edition = "2021"
+authors = ["Jordy Fontoura <https://github.com/jordyfontoura>"]
+description = "Scan and clean .gitignore-ignored files with sizes and interactive deletion"
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/jordyfontoura/gitclean"
+keywords = ["git", "gitignore", "clean", "cli", "rust"]
+categories = ["command-line-utilities"]
+
+[lib]
+name = "gitclean"
+path = "src/lib.rs"
+
+[[bin]]
+name = "gitclean"
+path = "src/main.rs"
+
+[dependencies]
+ignore = "0.4"
+walkdir = "2.3"
+console = "0.15"
+anyhow = "1.0"
+inquire = "0.7.5"
+clap = { version = "4.0", features = ["derive"] }
+indicatif = "0.17"
+rayon = "1.10"
+
+[dev-dependencies]
+tempfile = "3"
